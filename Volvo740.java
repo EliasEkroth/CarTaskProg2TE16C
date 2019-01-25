@@ -16,7 +16,7 @@ public class Volvo740 {
 		stopEngine();
 	}
 
-	public double getEnginePower() {
+	private double getEnginePower() {
 		return enginePower;
 	}
 
@@ -36,15 +36,15 @@ public class Volvo740 {
 		currentSpeed = 0;
 	}
 
-	public double speedFactor() {
+	private double speedFactor() {
 		return enginePower * 0.01 * trimFactor;
 	}
 
-	public void incrementSpeed(double amount) {
+	private void incrementSpeed(double amount) {
 		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
 	}
 
-	public void decrementSpeed(double amount) {
+	private void decrementSpeed(double amount) {
 		currentSpeed = getCurrentSpeed() - speedFactor() * amount;
 	}
 
