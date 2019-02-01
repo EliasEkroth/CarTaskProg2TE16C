@@ -4,7 +4,7 @@ public interface Movable {
 public void move() {
 
         double radians = Math.toRadians(this.getRotate() - 90);
-
+        
         this.setTranslateX(this.getTranslateX() + Math.cos(radians) * 200);
         this.setTranslateY(this.getTranslateY() + Math.sin(radians) * 200);
 
