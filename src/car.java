@@ -3,7 +3,7 @@ import javafx.scene.paint.Color;
 
 public class car implements Movable{
 	
-	public static double trimFactor;      //joel suger
+	public static double trimFactor;      //JOEL SUGER
 	public boolean turboOn;
 
 	public double enginePower; // Engine power of the car
