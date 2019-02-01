@@ -8,6 +8,9 @@ public void move() {
         this.setTranslateX(this.getTranslateX() + Math.cos(radians) * 200);
         this.setTranslateY(this.getTranslateY() + Math.sin(radians) * 200);
 
+        this.setTranslateX(this.getTranslateX() + Math.cos(radians) * 6.9);
+        this.setTranslateY(this.getTranslateY() + Math.sin(radians) * 6.9);
+        			
         if(this.getTranslateY() <= -100){
             this.setTranslateY(1000);
         }
