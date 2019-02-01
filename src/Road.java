@@ -12,7 +12,7 @@ import java.util.ArrayList;
     public class Road extends Application {
 
         Scene scene;
-        Rocket rocket;
+        Car car;
         static Group root;
 
         public static final ArrayList<KeyCode> keys = new ArrayList<KeyCode>();;
@@ -29,64 +29,39 @@ import java.util.ArrayList;
             setKeyPress();
             startAnimationTimer();
 
-            for (int i = 0; i < 1000; i++) {
 
-                Circle star = new Circle(Math.random() * 4);
-                star.setFill(Color.YELLOW);
-                star.setTranslateX(Math.random() * 1920);
-                star.setTranslateY(Math.random() * 1000);
+            car = new Car();
 
-                root.getChildren().add(star);
-
-            }
-
-            for (int i = 0; i < 30; i++) {
-
-                Circle planet = new Circle(Math.random() * 15 + 15);
-                planet.setFill(Color.GREEN);
-                planet.setTranslateX(Math.random() * 1800+ 100);
-                planet.setTranslateY(Math.random() * 800 + 100);
-
-                root.getChildren().add(planet);
-
-            }
-
-            rocket = new Rocket();
-
-            root.getChildren().add(rocket);
-
-
-
-
+            root.getChildren().add(car);
 
             primaryStage.setScene(scene);
             primaryStage.show();
 
         }
-private void startAnimationTimer() {
+
+
+        private void startAnimationTimer() {
 
             AnimationTimer at = new AnimationTimer() {
-
-                @Override
+@Override
                 public void handle(long now) {
 
                     for (KeyCode key : keys) {
 
                         switch (key) {
-
-                        case W:
-                            double deg = Math.toRadians(rocket.getRotate());
-                            rocket.moveForward();
+case W:
+                            double deg = Math.toRadians(car.getRotate());
+                            car.moveForward();
                             break;
 
                         case A:
-                            rocket.rotateLeft();
+                            car.rotateLeft();
                             break;
                         case D:
-                            rocket.rotateRight();
+                            car.rotateRight();
                             break;
                         case SPACE:
-                            Bullet b = rocket.shoot();
+                            Bullet b = car.shoot();
                             root.getChildren().add(b);
                             break;
 

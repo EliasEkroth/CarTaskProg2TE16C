@@ -11,7 +11,7 @@ public class Saab95 extends car {
 	}
 
 
-		public void setTurboOn() {			//man sätter ju inte på en turbå, du menar nitrus?!
+		public void setTurboOn() {
 		turboOn = true;
 	}
 

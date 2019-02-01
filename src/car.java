@@ -15,7 +15,7 @@ public class car implements Movable{
 		return enginePower;
 	}
 
-	 private double getCurrentSpeed() {
+	 public double getCurrentSpeed() {
 		return currentSpeed;
 	}
 
@@ -56,19 +56,40 @@ public class car implements Movable{
 
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
+        double radians = Math.toRadians(this.getRotate() - 90);
+        
+        this.setTranslateX(this.getTranslateX() + Math.cos(radians) * getCurrentSpeed());
+        this.setTranslateY(this.getTranslateY() + Math.sin(radians) * getCurrentSpeed());
+        			
+        if(this.getTranslateY() <= -100){
+            this.setTranslateY(1000);
+        }
+
+        else if(this.getTranslateY() >= 1000){
+            this.setTranslateY(-100);
+        }
+
+        else if(this.getTranslateX() <= -100){
+            this.setTranslateX(1920);
+        }
+
+        else if(this.getTranslateX() >= 1920){
+            this.setTranslateX(-100);
+        }
+
+
 		
 	}
 
 	@Override
 	public void turnLeft() {
-		// TODO Auto-generated method stub
+		this.setRotate(this.getRotate() - 20);
 		
 	}
 
 	@Override
 	public void turnRight() {
-		// TODO Auto-generated method stub
+		this.setRotate(this.getRotate() + 20);
 		
 	}
 }
