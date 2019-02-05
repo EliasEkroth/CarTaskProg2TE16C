@@ -33,7 +33,7 @@ gas() och break() bara accepterar värden i intervallet [0, 1],<br>
 currentSpeed alltid ligger i intervallet [0, enginePower],<br>
 Anrop till gas() inte kan resultera i att farten sänks.<br>
 Anrop till break() inte kan resultera i att farten höjs.<br>
-Lägg även till två stycken egna bilmodeller utöver Volvo740 och Saab95.<br>
+Lägg även till två stycken egna bilmodeller utöver Volvo740 och Saab95.<br><br>
 Uppgift E:<br>
 Skapa ett UML-diagram för er nuvarande design.<br>
 Spara UML-diagrammet som en .html-fil i ert repo.<br>
