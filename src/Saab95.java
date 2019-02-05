@@ -3,7 +3,7 @@ import javafx.scene.paint.Color;
 public class Saab95 extends car {
 
 	private Saab95() {
-		color = Color.BLACK;
+		color = Color.SILVER;
 		enginePower = 68; // 1978 års modell enna
 		turboOn = false;
 		modelName = "Saab95";
