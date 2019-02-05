@@ -21,10 +21,10 @@ void move()<br>
 void turnLeft()<br>
 void turnRight()<br>
 Se till att era bilar implementerar interfacet Movable, med någon lämplig intern representation av deras riktning och position.<br>
-Metoden move ska fungera så att beroende på riktning ökas (eller minskas) bilens x- eller y-koordinat med dess currentSpeed.<br>
+Metoden move ska fungera så att beroende på riktning ökas (eller minskas) bilens x- eller y-koordinat med dess currentSpeed.<br><br>
 Uppgift C:<br>
 Använd Javadoc för att kommentera samtliga klasser och interfaces. Ni ska ha Javadoc för alla filer.<br>
-Det ska minst finnas Javadoc för själva klassen och alla dess publika metoder plus konstruktorer.<br>
+Det ska minst finnas Javadoc för själva klassen och alla dess publika metoder plus konstruktorer.<br><br>
 Uppgift D:<br>
 Bilklassernas metoder har för närvarande inget sätt att kontrollera hur mycket farten kan öka eller sänkas.<br>
 Skriv om metoder (och dokumentation) så att:<br><br>
