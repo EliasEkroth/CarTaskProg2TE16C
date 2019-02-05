@@ -1,3 +1,4 @@
+package cartaskpackage;
 import java.util.ArrayList;
 
     import javafx.animation.AnimationTimer;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
     public class Road extends Application {
 
         Scene scene;
-        Car car;
+        car car;
         static Group root;
 
         public static final ArrayList<KeyCode> keys = new ArrayList<KeyCode>();;
@@ -30,7 +31,7 @@ import java.util.ArrayList;
             startAnimationTimer();
 
 
-            car = new Car();
+            car = new car();
 
             root.getChildren().add(car);
 
@@ -51,18 +52,14 @@ import java.util.ArrayList;
                         switch (key) {
 case W:
                             double deg = Math.toRadians(car.getRotate());
-                            car.moveForward();
+                            car.move();
                             break;
 
                         case A:
-                            car.rotateLeft();
+                            car.turnLeft();
                             break;
                         case D:
-                            car.rotateRight();
-                            break;
-                        case SPACE:
-                            Bullet b = car.shoot();
-                            root.getChildren().add(b);
+                            car.turnRight();
                             break;
 
                         }
