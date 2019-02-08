@@ -3,7 +3,7 @@ import javafx.scene.paint.Color;
 
 public class Saab95 extends car {
 
-	private Saab95() {
+	private Saab95() {				//sätter den specifika datan för saaben
 
 		color = Color.BLACK;
 		enginePower = 125;
@@ -16,11 +16,11 @@ public class Saab95 extends car {
 	}
 
 
-		public void setTurboOn() {
+		public void setTurboOn() {	//sätter på turbon
 		turboOn = true;
 	}
 
-		public void setTurboOff() {
+		public void setTurboOff() {	//stänger av turbon
 		turboOn = false;
 	}
 
