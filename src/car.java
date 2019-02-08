@@ -34,7 +34,12 @@ public class car extends Group implements Movable {
 	}
 
 	private void incrementSpeed(double amount) {	//bestämmer farten
-		currentSpeed = getCurrentSpeed() + speedFactor() * amount;	//sätter nuvarande farten till föregående + accelerationen.
+		if(currentSpeed>enginePower){				//så länge current speed ligger i intervallet 0-engingePower
+			currentSpeed = getCurrentSpeed() + speedFactor() * amount;	//sätter nuvarande farten till föregående + accelerationen.
+		}
+		else{								//sätter max farten till enginepower
+			currentSpeed = enginePower;
+		}
 	}
 
 	private void decrementSpeed(double amount) {	//bestämmer hur fort du bromsar
