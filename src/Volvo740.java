@@ -6,7 +6,7 @@ public class Volvo740 extends car{
 
 	private Volvo740() {		//sätter den specifika datan för volvo740
 		color = Color.RED;
-		enginePower = 100;
+		enginePower = 100/*hp*/;
 		modelName = "Volvo740";
 		stopEngine();
 		trimFactor = 1.25;

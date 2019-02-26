@@ -6,7 +6,7 @@ public class Saab95 extends car {
 	private Saab95() {				//sätter den specifika datan för saaben
 
 		color = Color.BLACK;
-		enginePower = 125;
+		enginePower = 125/*hp*/;
 
 		color = Color.SILVER;
 		enginePower = 68; // 1978 års modell enna
