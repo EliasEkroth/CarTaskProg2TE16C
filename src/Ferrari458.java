@@ -6,7 +6,7 @@ public class Ferrari458 extends car{
 
 	private Ferrari458() {		//sätter den specifika datan för ferrari
 		color = Color.RED;
-		enginePower = 570 /*herspers*/;
+		enginePower = 1340 /*bulkade hästar*/;
 		modelName = "Ferrari458";
 		stopEngine();
 	}
