@@ -50,7 +50,7 @@ import java.util.ArrayList;
                     for (KeyCode key : keys) {
 
                         switch (key) {
-case W:
+                        case W:
                             double deg = Math.toRadians(car.getRotate());
                             car.move();
                             break;
