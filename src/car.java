@@ -46,8 +46,19 @@ public class car extends Group implements Movable {
 		currentSpeed = getCurrentSpeed() - speedFactor() * amount;		//sätter den nuvarande farten efter att man bromsat
 	}
 
-	public void gas(double amount) {	//säger att du skall accelerera	
-		incrementSpeed(amount);			//hämtar accelerade farten
+	public enum gasOrNot {
+		0,1
+	}
+	
+	public gas(gasOrNot) { 	//säger att du skall accelerera	
+		if(gasOrNot == 1) {
+			if(amount <= 1) {
+			incrementSpeed(amount);	//hämtar accelerade farten
+			}
+		}
+		if (gasOrNot == 0) {
+			return;
+		}
 	}
 
 	public void brake(double amount) {	//säger att du skall bromsa
