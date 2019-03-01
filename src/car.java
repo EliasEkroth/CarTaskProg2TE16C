@@ -79,35 +79,17 @@ public class car extends Group implements Movable {
         this.setTranslateX(this.getTranslateX() + Math.cos(radians) * getCurrentSpeed()); //säger hur mycket bilen skall förflyttas i x led
         this.setTranslateY(this.getTranslateY() + Math.sin(radians) * getCurrentSpeed()); //säger hur mycket bilen skall förflyttas i y led
         			
-        if(this.getTranslateY() <= -100){	//om bilen försvinner utanför skärmen kommer den upp på andra sidan.
-            this.setTranslateY(1000);
-        }
-
-        else if(this.getTranslateY() >= 1000){	//	-||-
-            this.setTranslateY(-100);
-        }
-
-        else if(this.getTranslateX() <= -100){	//	-||-
-            this.setTranslateX(1920);
-        }
-
-        else if(this.getTranslateX() >= 1920){	//	-||-
-            this.setTranslateX(-100);
-        }
-
-
-		
 	}
 
 	@Override
 	public void turnLeft() {						//roterar bilen uppot.
-		this.setRotate(this.getRotate() - 20);
+		this.setRotate(this.getRotate() - 90);
 		
 	}
 
 	@Override
 	public void turnRight() {						//roterar bilen neråt.
-		this.setRotate(this.getRotate() + 20);
+		this.setRotate(this.getRotate() + 90);
 		
 	}
 }
