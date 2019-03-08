@@ -47,10 +47,17 @@ public class car extends Group implements Movable {
 	}
 
 	public enum gasOrNot {
-		0,1
+		0,1;
+	}
+	
+	public enum brakeOrNot {
+		0,1;
 	}
 	
 	public gas(gasOrNot) { 	//säger att du skall accelerera	
+		if(brakeOrNot == 1) {
+			brakeOrNot = 0;
+		}
 		if(gasOrNot == 1) {
 			if(amount <= 1) {
 			incrementSpeed(amount);	//hämtar accelerade farten
@@ -60,9 +67,19 @@ public class car extends Group implements Movable {
 			return;
 		}
 	}
-
-	public void brake(double amount) {	//säger att du skall bromsa
-		decrementSpeed(amount);			//hämtar den de-accelererade farten.
+	
+	public brake(brakeOrNot) { 	//säger att du skall accelerera	
+		if(gasOrNot == 1) {
+			gasOrNot = 0;
+		}
+		if(brakeOrNot == 1) {
+			if(amount <= 1) {
+			decrementSpeed(amount);	//hämtar accelerade farten
+			}
+		}
+		if (brakeOrNot == 0) {
+			return;
+		}
 	}
 	
 	private double speedFactor() {		//bestämmer accelerationen
