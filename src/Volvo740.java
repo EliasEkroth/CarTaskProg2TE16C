@@ -8,7 +8,6 @@ public class Volvo740 extends car{
 		color = Color.RED;
 		enginePower = 100/*hp*/;
 		modelName = "Volvo740";
-		stopEngine();
 		trimFactor = 1.25;
 	}
 
