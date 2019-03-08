@@ -2,7 +2,7 @@ package cartaskpackage;
 
 public interface Movable{
 
-public void move();
+	public void move();
 
     public void turnLeft();	
 
