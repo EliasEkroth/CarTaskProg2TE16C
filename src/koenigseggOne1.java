@@ -8,7 +8,6 @@ public class koenigseggOne:1 extends car{
 		color = Color.RED;
 		enginePower = 1340 /*bulkade hästar*/;
 		modelName = "koenigseggOne:1";
-		stopEngine();
 	}
 
 }

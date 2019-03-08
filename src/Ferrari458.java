@@ -8,7 +8,6 @@ public class Ferrari458 extends car{
 		color = Color.RED;
 		enginePower = 570 /*herspers*/;
 		modelName = "Ferrari458";
-		stopEngine();
 	}
 
 }

@@ -12,7 +12,6 @@ public class Saab95 extends car {
 		enginePower = 68; // 1978 års modell enna
 		turboOn = false;
 		modelName = "Saab95";
-		stopEngine();
 	}
 
 
