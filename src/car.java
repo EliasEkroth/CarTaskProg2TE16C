@@ -12,6 +12,12 @@ public class car extends Group implements Movable {
 	private double currentSpeed; // The current speed of the car
 	public Color color; // Color of the car
 	public String modelName; // The car model name
+	private enum gasOrNot { // Decides if the car will accelerate
+		0,1;
+	}
+	private enum brakeOrNot { // Decides if the car will brake
+		0,1;
+	}
 
 	private double getEnginePower() {	//hämtar herspers från de specifika bilarna
 		return enginePower;
@@ -34,8 +40,13 @@ public class car extends Group implements Movable {
 	}
 
 	private void incrementSpeed(double amount) {	//bestämmer farten
-		if(currentSpeed>enginePower){				//så länge current speed ligger i intervallet 0-engingePower
-			currentSpeed = getCurrentSpeed() + speedFactor() * amount;	//sätter nuvarande farten till föregående + accelerationen.
+		if(amount < 0) {
+			amount = amount*-1;
+		}
+		if(amount > 1) {
+			if(currentSpeed < enginePower){				//så länge current speed ligger i intervallet 0-engingePower
+				currentSpeed = getCurrentSpeed() + speedFactor() * amount;	//sätter nuvarande farten till föregående + accelerationen.
+			}
 		}
 		else{								//sätter max farten till enginepower
 			currentSpeed = enginePower;
@@ -43,15 +54,15 @@ public class car extends Group implements Movable {
 	}
 
 	private void decrementSpeed(double amount) {	//bestämmer hur fort du bromsar
-		currentSpeed = getCurrentSpeed() - speedFactor() * amount;		//sätter den nuvarande farten efter att man bromsat
-	}
-
-	public enum gasOrNot {
-		0,1;
-	}
-	
-	public enum brakeOrNot {
-		0,1;
+		if(amount < 0) {
+			amount = amount*-1;
+		}
+		if(amount > 1) {
+			currentSpeed = getCurrentSpeed() - speedFactor() * amount;		//sätter den nuvarande farten efter att man bromsat
+				if(currentSpeed < 0) {
+					currentSpeed = 0;
+				}
+		}
 	}
 	
 	public gas(gasOrNot) { 	//säger att du skall accelerera	
@@ -59,25 +70,21 @@ public class car extends Group implements Movable {
 			brakeOrNot = 0;
 		}
 		if(gasOrNot == 1) {
-			if(amount <= 1) {
 			incrementSpeed(amount);	//hämtar accelerade farten
-			}
 		}
-		if (gasOrNot == 0) {
+		else if (gasOrNot == 0) {
 			return;
 		}
 	}
 	
-	public brake(brakeOrNot) { 	//säger att du skall accelerera	
+	public brake(brakeOrNot) { 	//säger att du skall decelerera	
 		if(gasOrNot == 1) {
 			gasOrNot = 0;
 		}
 		if(brakeOrNot == 1) {
-			if(amount <= 1) {
-			decrementSpeed(amount);	//hämtar accelerade farten
-			}
+			decrementSpeed(amount);	//hämtar decelerade farten
 		}
-		if (brakeOrNot == 0) {
+		else if (brakeOrNot == 0) {
 			return;
 		}
 	}
