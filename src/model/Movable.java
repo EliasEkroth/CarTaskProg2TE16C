@@ -1,4 +1,4 @@
-package cartaskpackage;
+package model;
 
 public interface Movable{
 

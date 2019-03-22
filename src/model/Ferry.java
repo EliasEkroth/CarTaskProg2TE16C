@@ -1,4 +1,4 @@
-package cartaskpackage;
+package model;
 
 import javafx.scene.paint.Color;
 import javafx.scene.Group;
